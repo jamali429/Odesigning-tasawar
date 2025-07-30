@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import "./cssfiles/components.css";
 import Section1 from './homesections/Section1';
 import Section2 from './homesections/Section2';
-import Section3 from './homesections/Section3';
-import Section4 from './homesections/Section4';
+// import Section3 from './homesections/Section3';
+// import Section4 from './homesections/Section4';
 import { IoIosArrowDown, IoIosArrowUp} from "react-icons/io";
 
 
@@ -75,7 +75,7 @@ export default function Home(){
         
         <div  ref={sections[0]} ><Section1 /></div>
         <div  ref={sections[1]} ><Section2 /></div>
-        <div  ref={sections[2]} ><Section3 /></div>
+        {/* <div  ref={sections[2]} ><Section3 /></div> */}
         {/* <div><Section4 /></div> */}
         <div className="updownarrows">
           {activeindex > 0  && <button  onClick={scrollup}><IoIosArrowUp className="fixedup"/></button>}
