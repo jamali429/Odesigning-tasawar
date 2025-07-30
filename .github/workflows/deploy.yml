@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -24,6 +24,9 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: List built files (debug)
+        run: ls -R dist
+
       - name: Upload to Hostinger via SSH
         uses: appleboy/scp-action@v0.1.4
         with:
@@ -32,4 +35,4 @@ jobs:
           port: ${{ secrets.HOSTINGER_PORT }}
           key: ${{ secrets.HOSTINGER_KEY }}
           source: "dist/**"
-          target: "public_html"
+          target: "public_html/"
