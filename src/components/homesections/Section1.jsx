@@ -18,7 +18,7 @@ export default function Section1() {
           </div>
           <div className='companylogos'><img src=".\Newfolder\1Asset-6-1024x81.webp" /></div>
         </div>
-        <div className='title'><h2>Launch With Updatede</h2></div>
+        <div className='title'><h2>Launch With Testing</h2></div>
         <div className='description'><p>Transform your digital presence from ordinary to extraordinary, without the high costs or long wait times associated with traditional creative teams.</p></div>
         <button>Claim Free Consultation</button>
       </div>
