@@ -6,14 +6,14 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -21,13 +21,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build the project
+      - name: Build project
         run: npm run build
 
-      - name: Deploy dist folder to deploy branch
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload to Hostinger via SSH
+        uses: appleboy/scp-action@v0.1.4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: deploy
-          force_orphan: true
+          host: ${{ secrets.HOSTINGER_HOST }}
+          username: ${{ secrets.HOSTINGER_USER }}
+          port: ${{ secrets.HOSTINGER_PORT }}
+          key: ${{ secrets.HOSTINGER_KEY }}
+          source: "dist/*"
+          target: "public_html"
