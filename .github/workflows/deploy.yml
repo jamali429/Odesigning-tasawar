@@ -35,4 +35,4 @@ jobs:
           port: ${{ secrets.HOSTINGER_PORT }}
           key: ${{ secrets.HOSTINGER_KEY }}
           source: "dist/*"
-          target: "https://srv1827-files.hstgr.io/public_html/"
+          target: "pink-camel-285943.hostingersite.com/public_html/"
