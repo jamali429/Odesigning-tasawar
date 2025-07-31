@@ -24,12 +24,10 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: List built files (debug)
-        run: |
-          echo "=== DIST FOLDER CONTENT ==="
-          ls -R dist
+      - name: List files (for debug)
+        run: ls -lah dist
 
-      - name: Upload to Hostinger via SCP
+      - name: Upload to Hostinger
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.HOSTINGER_HOST }}
@@ -38,4 +36,3 @@ jobs:
           key: ${{ secrets.HOSTINGER_KEY }}
           source: "dist/*"
           target: "public_html/"
-          strip_components: 1
