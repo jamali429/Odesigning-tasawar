@@ -1,15 +1,5 @@
-// vite.config.js
-import './vite.fix.js'; // 👈 this is the patch
 import { defineConfig } from 'vite';
-
+import react from '@vitejs/plugin-react';
 export default defineConfig({
-  css: {
-    postcss: {
-      plugins: [],
-    },
-    devSourcemap: true,
-  },
-  build: {
-    assetsInlineLimit: 0,
-  },
+  plugins: [react()],
 });
