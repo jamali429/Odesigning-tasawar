@@ -1,9 +1,9 @@
 // vite.config.js
+import './vite.fix.js'; // 👈 this is the patch
 import { defineConfig } from 'vite';
 
 export default defineConfig({
   css: {
-    url: false, // ✅ Add this line to prevent Vite from transforming URLs in CSS
     postcss: {
       plugins: [],
     },
