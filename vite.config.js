@@ -2,13 +2,13 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  build: {
-    // fallback for crypto.hash
-    assetsInlineLimit: 0,
-  },
-  css: {
+    css: {
     postcss: {
       plugins: [],
     },
+    devSourcemap: true,
+  },
+  build: {
+    assetsInlineLimit: 0,
   },
 });
